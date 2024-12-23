@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Homepage</title>
+        
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <header>
+            {% include "header/header.html" %}
+        </header>
+        
+        <main class="d-flex justify-content-center">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

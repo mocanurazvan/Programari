@@ -1,0 +1,34 @@
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+    background-color: white;
+    border-right: 1px solid grey;
+    width: 10vw;
+    text-align: center;
+}
+
+nav a:hover {
+
+}
+
+.container {
+    width: 60vw;
+}
+
+
+.container-servicii {
+    display: block;
+}
+
+.serviciu {
+}
+
+_carousel-week-controls {
+    position: relative;
+    display: flex;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    filter: invert(100%);
+}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load planificator_tags %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center w-75">
+    <div class="d-block">
+        <div>
+            <h2 class="p-1 mx-2 mt-2 mb-5">Alege cand te programezi</h2>
+        </div>
+
+        <div class="d-block">
+            <div id="carouselWeek" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                    <div class="carousel-inner">
+                        {% get_next_month_weeks as month %}
+                        {% for week in month %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <div class="d-flex justify-content-center p-3 m-1">
+                                    {% for day in week %}
+                                        <div class="p-3 m-1 bg-gray">{{ day }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+
+            <div class="d-block">
+                <div class="carousel-controls text-center mt-3 d-flex justify-content-center _carousel-week-controls">
+                    <button class="btn carousel-control-prev" type="button"
+                            data-bs-target="#carouselWeek"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                        <span>Previous</span>
+                    </button>
+                    <button class="btn carousel-control-next" type="button"
+                            data-bs-target="#carouselWeek"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="false"></span>
+                        <span>Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

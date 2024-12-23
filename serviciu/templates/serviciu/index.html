@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2 class="p-1 mx-2 mt-2 mb-5">Servicii</h2>
+
+    <div class="container-servicii">
+
+        {% for serviciu in servicii %}
+        <div class="serviciu d-flex justify-content-between p-1 m-2">
+            <div class="d-block">
+                <div class="fs-4">{{ serviciu.nume }}</div>
+                <div> {{ serviciu.durata }} min, {{serviciu.pret}} lei</div>
+
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+                <a href="/planificator" class="btn btn-primary">Programeaza</a>
+            </div>
+        </div>
+
+        <hr>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
